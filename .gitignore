@@ -1,1 +1,5 @@
-Debug/OBD2Test.elf
+Debug/
+Debug/*.*
+
+
+Debug/OBD2Test.list

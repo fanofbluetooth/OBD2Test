@@ -60,8 +60,8 @@ all: main-build
 main-build: OBD2Test.elf secondary-outputs
 
 # Tool invocations
-OBD2Test.elf OBD2Test.map: $(OBJS) $(USER_OBJS) D:\OBD2Test\OBD2Test\STM32F103RCTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "OBD2Test.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"D:\OBD2Test\OBD2Test\STM32F103RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="OBD2Test.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+OBD2Test.elf OBD2Test.map: $(OBJS) $(USER_OBJS) H:\jin\ref\work\149_caz\06_test\OBD2Test\STM32F103RCTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "OBD2Test.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"H:\jin\ref\work\149_caz\06_test\OBD2Test\STM32F103RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="OBD2Test.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

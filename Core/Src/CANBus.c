@@ -22,6 +22,7 @@ volatile bool				isCANRXReady;
 
 PROTOCOL_TYPES_t 			proType = PROTO_CAN_NONE;
 
+uint8_t TxData[8];
 
 extern CAN_HandleTypeDef hcan;
 
@@ -325,4 +326,18 @@ bool CANRxHandler(uint32_t* pHeader, uint8_t* pData)
 		return true;
 	}
 	return false;
+}
+
+
+void CANTxTest()
+{
+	TxData[0] = 0x04;
+	TxData[1] = 0x1b;
+	TxData[2] = 0x7D;
+	TxData[3] = 0x00;
+	TxData[4] = 0xff;
+	TxData[5] = 0xff;
+	TxData[6] = 0xff;
+	TxData[7] = 0xff;
+	HAL_CAN_AddTxMessage(&hcan, &TxHeader, TxData, &TxMailBox);
 }

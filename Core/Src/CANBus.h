@@ -28,6 +28,6 @@ bool CANBusInit_29B_500K(void);
 bool CANBusInit_29B_250K(void);
 bool CANSendPathThrough(uint8_t* pData, uint8_t len);
 bool CANRxHandler(uint32_t* pHeader, uint8_t* pData);
-
+void CANTxTest(void);
 #endif
 
